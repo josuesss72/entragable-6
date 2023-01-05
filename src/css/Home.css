@@ -1,0 +1,36 @@
+.home {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.main {
+  width: 80%;
+  height: 100%;
+  margin-left: auto;
+}
+.box_search {
+  width: 70%;
+  display: flex;
+  margin: 0 auto;
+  margin-top: 6rem;
+}
+.input_search {
+  width: 80%;
+  height: 40px;
+  font-size: 18px;
+}
+.btn_search {
+  width: 20%;
+}
+
+.container_products {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 10%;
+  margin-bottom: 10%;
+  width: 100%;
+}
+
+

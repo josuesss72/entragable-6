@@ -1,0 +1,45 @@
+.filter {
+  width: 20%;
+  position: fixed;
+  top: 55px;
+  left: 0;
+  bottom: 0;
+}
+.section_filter {
+  width: 100%;
+  height: 200px;
+  padding: 1rem;
+}
+.box_filter {
+  width: 100%;
+}
+.box_filter h3 {
+  width: 100%;
+  height: 35px;
+  border-bottom: 1px solid;
+  margin-bottom: 1rem;
+}
+.box_input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  width: 100%;
+  height: 35px;
+}
+.box_input input {
+  height: 100%;
+  width: 80%;
+  border-radius: 6px;
+  border: 1px solid var(--border_color);
+}
+.category {
+  width: 100%;
+  height: 35px;
+  cursor: pointer;
+  transition: color 0.1s;
+}
+.category:hover {
+  color: var(--color_first);
+}
+
