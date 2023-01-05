@@ -3,6 +3,8 @@
   flex-direction: column;
   gap: 1.5rem;
   width: 100%;
+  max-width: 550px;
+  margin: 0 auto;
 }
 .section_description h4 {
   margin-left: 0.6rem;
@@ -25,4 +27,11 @@
 }
 .btn_description:hover {
   transform: scale(1.004);
+}
+@media (min-width: 1000px) {
+  .section_description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
 }

@@ -3,9 +3,17 @@
   grid-template-columns: 1fr;
   grid-template-rows: 400px 1fr;
   width: 90%;
-  max-width: 1024px;
+  max-width: 1200px;
   margin: 0 auto;
   gap: 1rem;
   margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+@media (min-width: 1000px) {
+  .grid_infoProduct {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 500px;
+    gap: 2rem;
+  }
 }
 

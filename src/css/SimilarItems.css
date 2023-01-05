@@ -5,6 +5,7 @@
   gap: 1rem;
   overflow-x: auto;
   margin: 0 auto;
+  padding: 2rem;
 }
 .container_similar_product > article {
   min-width: 100%;
@@ -13,6 +14,7 @@
 }
 .section_similar_items {
   width: 100%;
+  padding: 2rem;
 }
 
 @media (min-width: 499px) {
@@ -29,5 +31,9 @@
     min-width: 270px;
     height: 370px;
   }
-  
+}
+@media (min-width: 1000px) {
+  .section_similar_items {
+    grid-column: 1/3;
+  }
 }
