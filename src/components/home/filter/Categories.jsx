@@ -8,20 +8,30 @@ const Categories = ({ categorys }) => {
 
   const handleClick = (e) => {
     const idCategory = e.target.id 
-    dispatch(getAllProducts(idCategory))
+    if(e.target.classList.contains('category')){
+      if(e.target.id === '0'){ 
+        dispatch(getAllProducts()) 
+      }else {
+        dispatch(getAllProducts(idCategory))
+      }
+    }
   }
 
   return (
     <section className='section_filter'>
-      <ul className='box_filter'>
+      <ul onClick={ handleClick } className='box_filter box_category'>
         <h3>Category</h3>
-        {
-          categorys?.map(category => {
-            return (
-              <li className='category' onClick={ handleClick } id={category.id} key={category.id}>{category.name}</li>
-            )
-          })
-        }
+
+        <div>
+          <li className='category' id='0'>All products</li>
+          {
+            categorys?.map(category => {
+              return (
+                <li className='category'  id={category.id} key={category.id}>{category.name}</li>
+              )
+            })
+          }
+        </div> 
       </ul>
     </section>	
   )
