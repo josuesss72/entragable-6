@@ -6,7 +6,7 @@ import { useState } from 'react';
 import Filter from '../../components/home/Filter';
 import '../../css/Filter.css'
 
-const Home = () => {
+const Home = ({ isShowFilter, setShowFilter }) => {
   const { products } = useSelector(state => state)
   const [ productsFilter, setProductsFilter ] = useState()
 
@@ -20,17 +20,21 @@ const Home = () => {
     })
     setProductsFilter(filter)
   }
+  const handleClick = () => {
+    setShowFilter(!isShowFilter) 
+  }
 
   productsFilter && console.log(productsFilter)
 
   return (
     <div className='home'>
-      <Filter setProductsFilter={ setProductsFilter }/> 
+      <Filter isShowFilter={ isShowFilter } setProductsFilter={ setProductsFilter }/> 
       <div className='main'>
         <section className='box_search'>
           <input onChange={handleChange} className='input_search' type='text'/>
           <button className='btn_search'>🔍</button>
         </section>
+        <button onClick={ handleClick } className='btn_show_filter'>Filter</button>
         <section className='container_products'>
           {
             productsFilter?

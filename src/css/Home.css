@@ -35,5 +35,21 @@
   margin-bottom: 10%;
   width: 100%;
 }
+.btn_show_filter{
+  margin-left: 15%;
+  margin-top: 1rem;
+  width: 50px;
+  height: 30px;
+}
+@media (max-width: 1200px) {
+  .main {
+    margin: 0 auto;
+  }
+}
+@media (min-width: 1200px) {
+  .btn_show_filter {
+    display: none;
+  }
+}
 
 

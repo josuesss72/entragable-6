@@ -22,6 +22,7 @@ import Purchase from './pages/purchase/Purchase'
 function App() {
   const dispatch = useDispatch()
   const [ isShowCart, setIsShowCart ] = useState(false)
+  const [ isShowFilter, setShowFilter ] = useState(false)
 
   useEffect(() => {
     dispatch(getAllProducts())
@@ -30,7 +31,11 @@ function App() {
   
   return (
     <div className="App">
-      <Header setIsShowCart={ setIsShowCart } isShowCart={ isShowCart }/>     
+      <Header 
+        setIsShowCart={ setIsShowCart } 
+        isShowCart={ isShowCart }
+        setShowFilter={ setShowFilter }
+      />     
       {
         localStorage.getItem('token')?
           <Cart isShowCart={ isShowCart }/>
@@ -38,7 +43,15 @@ function App() {
           ''
       } 
       <Routes>
-        <Route path='/' element={<Home/>}/> 
+        <Route 
+          path='/' 
+          element={
+            <Home 
+              setShowFilter={ setShowFilter } 
+              isShowFilter={ isShowFilter }
+            />
+          }
+        /> 
         <Route path='/product/:id' element={ <InfoProduct/> }/>
         <Route path='/login' element={ <Login/> }/>
         
