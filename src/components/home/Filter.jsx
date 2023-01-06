@@ -2,8 +2,9 @@ import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import getConfig from '../../utils/getConfig';
 import Categories from './filter/Categories';
+import Price from './filter/Price';
 
-const Filter = () => {
+const Filter = ({ setProductsFilter }) => {
   const [ categorys, setCategorys ] = useState() 
 
   useEffect(() => {
@@ -18,20 +19,8 @@ const Filter = () => {
 
   return (
     <aside className='filter'>
-      <section className='section_filter'>
-        <ul className='box_filter'>
-          <h3>Price</h3>
-          <li className='box_input'>
-            <label htmlFor='from'>From</label>
-            <input name='from' type='text'></input>
-          </li> 
-          <li className='box_input'>
-            <label htmlFor='to'>To</label>
-            <input name='to' type='text'></input>
-          </li>
-        </ul>
-      </section> 
-      <Categories categorys={ categorys }/>
+      <Price setProductsFilter={ setProductsFilter }/> 
+      <Categories setProductsFilter={setProductsFilter} categorys={ categorys }/>
     </aside>	
   )
 }

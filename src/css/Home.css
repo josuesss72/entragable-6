@@ -21,8 +21,11 @@
 }
 .btn_search {
   width: 20%;
+  background-color: var(--color_first);
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
 }
-
 .container_products {
   display: flex;
   justify-content: center;

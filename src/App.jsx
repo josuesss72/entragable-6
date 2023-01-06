@@ -40,12 +40,9 @@ function App() {
       <Routes>
         <Route path='/' element={<Home/>}/> 
         <Route path='/product/:id' element={ <InfoProduct/> }/>
+        <Route path='/login' element={ <Login/> }/>
         
         <Route element={ <RoutProtect/> }>
-          <Route 
-            path='/login' 
-            element={ <Login/> }
-          />
           <Route path='/purchase' element={<Purchase/>}/>
         </Route>
       </Routes>

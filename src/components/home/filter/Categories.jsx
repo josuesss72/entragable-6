@@ -2,11 +2,12 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { getAllProducts } from '../../../store/slice/Products.slice';
 
-const Categories = ({ categorys }) => {
+const Categories = ({ categorys, setProductsFilter }) => {
   
   const dispatch = useDispatch()
 
   const handleClick = (e) => {
+    setProductsFilter()
     const idCategory = e.target.id 
     if(e.target.classList.contains('category')){
       if(e.target.id === '0'){ 

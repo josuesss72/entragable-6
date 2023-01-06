@@ -8,7 +8,7 @@ import '../../css/Filter.css'
 
 const Home = () => {
   const { products } = useSelector(state => state)
-  const [ filterSearch, setFilterSearch ] = useState()
+  const [ productsFilter, setProductsFilter ] = useState()
 
   const handleChange = (e) => {
     const value = e.target.value.toLowerCase().trim()
@@ -18,12 +18,14 @@ const Home = () => {
         return x
       }
     })
-    setFilterSearch(filter)
+    setProductsFilter(filter)
   }
+
+  productsFilter && console.log(productsFilter)
 
   return (
     <div className='home'>
-      <Filter/> 
+      <Filter setProductsFilter={ setProductsFilter }/> 
       <div className='main'>
         <section className='box_search'>
           <input onChange={handleChange} className='input_search' type='text'/>
@@ -31,8 +33,8 @@ const Home = () => {
         </section>
         <section className='container_products'>
           {
-            filterSearch?
-              filterSearch?.map(x => (
+            productsFilter?
+              productsFilter?.map(x => (
                 <CardProduct key={x.id} product={x}/>
               ))
             :

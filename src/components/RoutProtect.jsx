@@ -1,10 +1,17 @@
 import React from 'react'; 
-import {Outlet}  from 'react-router-dom'
+import {Outlet, Navigate}  from 'react-router-dom'
 
 const RoutProtect = () => {
-  return (
-    <Outlet/>
-  ) 
+
+  if(localStorage.getItem('token')) {
+    return (
+      <Outlet/>
+    )
+  }else {
+    return (
+      <Navigate to='/login'/>
+    ) 
+  }
 }
 
 export default RoutProtect

@@ -62,4 +62,16 @@
 .category:hover {
   color: var(--color_first);
 }
+.btn_price_filter {
+  width: 40%;
+  height: 30px;
+  border: none;
+  background-color: var(--color_first);
+  color: white;
+  border-radius: 5px;
+  margin-top: 1rem;
+  transform: translateX(150px);
+  cursor: pointer;
+  font-size: 14px;
+}
 
