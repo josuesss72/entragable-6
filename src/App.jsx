@@ -18,6 +18,9 @@ import './css/Cart.css'
 import Footer from './components/Footer'
 import './css/Footer.css'
 import Purchase from './pages/purchase/Purchase'
+import { useSelector } from 'react-redux'
+import Loding from './components/Loding'
+import './css/Loding.css'
 
 function App() {
   const dispatch = useDispatch()
@@ -28,39 +31,49 @@ function App() {
     dispatch(getAllProducts())
     dispatch(getUserCart())
   },[dispatch])
+
+  const { products } = useSelector(state => state)
   
   return (
-    <div className="App">
-      <Header 
-        setIsShowCart={ setIsShowCart } 
-        isShowCart={ isShowCart }
-        setShowFilter={ setShowFilter }
-      />     
+    <>
       {
-        localStorage.getItem('token')?
-          <Cart isShowCart={ isShowCart }/>
-        :
-          ''
-      } 
-      <Routes>
-        <Route 
-          path='/' 
-          element={
-            <Home 
-              setShowFilter={ setShowFilter } 
-              isShowFilter={ isShowFilter }
-            />
-          }
-        /> 
-        <Route path='/product/:id' element={ <InfoProduct/> }/>
-        <Route path='/login' element={ <Login/> }/>
+        products?
+          <div className="App">
+            <Header 
+              setIsShowCart={ setIsShowCart } 
+              isShowCart={ isShowCart }
+              setShowFilter={ setShowFilter }
+            />     
+            {
+              localStorage.getItem('token')?
+                <Cart isShowCart={ isShowCart }/>
+              :
+                ''
+            } 
+            <Routes>
+              <Route 
+                path='/' 
+                element={
+                  <Home 
+                    setShowFilter={ setShowFilter } 
+                    isShowFilter={ isShowFilter }
+                    setIsShowCart={ setIsShowCart }
+                  />
+                }
+              /> 
+              <Route path='/product/:id' element={ <InfoProduct/> }/>
+              <Route path='/login' element={ <Login/> }/>
         
-        <Route element={ <RoutProtect/> }>
-          <Route path='/purchase' element={<Purchase/>}/>
-        </Route>
-      </Routes>
-      <Footer/>
-    </div>
+              <Route element={ <RoutProtect/> }>
+                <Route path='/purchase' element={<Purchase/>}/>
+              </Route>
+            </Routes>
+            <Footer/>
+          </div>
+        :
+          <Loding/>
+      }  
+    </> 
   )
 }
 

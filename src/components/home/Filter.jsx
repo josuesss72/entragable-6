@@ -4,7 +4,7 @@ import getConfig from '../../utils/getConfig';
 import Categories from './filter/Categories';
 import Price from './filter/Price';
 
-const Filter = ({ setProductsFilter, isShowFilter }) => {
+const Filter = ({ setProductsFilter, isShowFilter, setShowFilter }) => {
   const [ categorys, setCategorys ] = useState() 
 
   useEffect(() => {
@@ -19,6 +19,9 @@ const Filter = ({ setProductsFilter, isShowFilter }) => {
 
   return (
     <aside className={`filter ${ isShowFilter? 'show_filter': '' }`}>
+      <button onClick={() => setShowFilter(false)} className='btn_x_filter'>
+        <i className='bx bx-x'></i>
+      </button>
       <Price setProductsFilter={ setProductsFilter }/> 
       <Categories setProductsFilter={setProductsFilter} categorys={ categorys }/>
     </aside>	

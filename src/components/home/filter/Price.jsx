@@ -1,7 +1,6 @@
 import React from 'react'; 
 import { useSelector } from 'react-redux';
 
-
 const Price = ({ setProductsFilter }) => {
 
   const { products } = useSelector(state => state)
@@ -14,7 +13,7 @@ const Price = ({ setProductsFilter }) => {
   
   function filterPrice (products, prices) {
     const filterProductsByPrice = products?.filter(product => {
-      if(product.price >= prices.from && product.price <= prices.to){
+      if(+product.price >= prices.from && +product.price <= prices.to){
         return product
       }
     })

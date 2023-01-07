@@ -38,8 +38,17 @@
 .btn_show_filter{
   margin-left: 15%;
   margin-top: 1rem;
-  width: 50px;
+  padding: 0.5rem;
   height: 30px;
+  background-color: transparent;
+  cursor: pointer;
+  border: 1px solid;
+  opacity: 0.7;
+
+  display: grid;
+  place-content: center;
+  grid-auto-flow: column;
+  gap: 0.3rem;
 }
 @media (max-width: 1200px) {
   .main {
