@@ -49,12 +49,13 @@ export default function useHandleCard (product) {
     }
     axios.post('https://e-commerce-api.academlo.tech/api/v1/cart', data, getConfig())
       .then(res => {
-        console.log(res)
         dispatch(getUserCart())
       })
       .catch(err => {
         console.log(err)
-        updateQuantity() 
+        if(err.response.status === 400){
+          updateQuantity() 
+        }
       })
   }
 
