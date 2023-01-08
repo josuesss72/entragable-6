@@ -16,6 +16,9 @@
   display: flex;
   flex-direction: column;
   gap: 4rem;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
 }
 .item_purchase {
   border: var(--border);
@@ -23,8 +26,9 @@
 .item_purchase h4 {
   padding: 1rem;
   border-bottom: var(--border);
-  background-color: var(--color_first);
+  background-color: #000000;
   color: white;
+  opacity: 0.8;
 }
 
 .grid_header_table {
